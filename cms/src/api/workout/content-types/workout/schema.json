@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workouts",
+  "info": {
+    "singularName": "workout",
+    "pluralName": "workouts",
+    "displayName": "Workout"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userId": {
+      "type": "string",
+      "required": true,
+      "description": "Clerk user ID of the user who performed this workout"
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "duration": {
+      "type": "integer",
+      "required": true,
+      "description": "Workout duration in seconds"
+    },
+    "exercises": {
+      "type": "json",
+      "description": "Array of exercises with nested sets (reps, weight, units)"
+    }
+  }
+}
