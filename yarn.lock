@@ -800,28 +800,28 @@
     standardwebhooks "^1.0.0"
     tslib "2.8.1"
 
-"@clerk/clerk-expo@^2.15.4":
-  version "2.15.4"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-2.15.4.tgz#a946a364e89f1d6976ed4217c6b93cad5b94ca50"
-  integrity sha512-tq0xHfbB+ssaQwDR/NTQBvAdAXw0S4VKjkNFxv4oHSPvVloyYSI780UARN3mfXZ40LlY06L+46BOHePHVgy12w==
+"@clerk/clerk-expo@^2.17.1":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-2.17.1.tgz#56ce2b62dde2ab18fb99744b005742681635a8ce"
+  integrity sha512-oD1Pocj/He2a5miO/6Z23DWnAJy1LATeVUxFB1fKQ2bX9Um/PHuDO4wcQN+M1VReZlQzkIODGi9His1C94fmIA==
   dependencies:
-    "@clerk/clerk-js" "^5.97.0"
-    "@clerk/clerk-react" "^5.49.1"
-    "@clerk/shared" "^3.27.1"
-    "@clerk/types" "^4.90.0"
+    "@clerk/clerk-js" "^5.102.1"
+    "@clerk/clerk-react" "^5.53.3"
+    "@clerk/shared" "^3.28.3"
+    "@clerk/types" "^4.95.1"
     base-64 "^1.0.0"
     react-native-url-polyfill "2.0.0"
     tslib "2.8.1"
 
-"@clerk/clerk-js@^5.97.0":
-  version "5.97.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-5.97.0.tgz#23806c96a0fc15be2f7a554f25d3ad60f769a43c"
-  integrity sha512-bFaghDHoXni1m8gW0iHadyF1PR6/hV5FID5Ec8S3L3TvhU90LCpU3blakaRKHuoINfPXhk6UwIqSpEbKrYB/iA==
+"@clerk/clerk-js@^5.102.1":
+  version "5.102.1"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-5.102.1.tgz#383fd4c4304507969feb6d1fb7d84763991a1a93"
+  integrity sha512-ssJ2nVagl5ZoJAxW21fPSv6U2nfESLPCxinCOGwZu1XArF+eWoX3e/2TGiDRJlEqyw2AT4Qor2Dpo7fBts7dUQ==
   dependencies:
     "@base-org/account" "2.0.1"
-    "@clerk/localizations" "^3.25.5"
-    "@clerk/shared" "^3.27.1"
-    "@clerk/types" "^4.90.0"
+    "@clerk/localizations" "^3.26.3"
+    "@clerk/shared" "^3.28.3"
+    "@clerk/types" "^4.95.1"
     "@coinbase/wallet-sdk" "4.3.0"
     "@emotion/cache" "11.11.0"
     "@emotion/react" "11.11.1"
@@ -852,12 +852,21 @@
     "@clerk/types" "^4.90.0"
     tslib "2.8.1"
 
-"@clerk/localizations@^3.25.5":
-  version "3.25.5"
-  resolved "https://registry.yarnpkg.com/@clerk/localizations/-/localizations-3.25.5.tgz#bc235199b7a4c78fdd03ecfe360ba46eb899781c"
-  integrity sha512-CRksWw5kTnxYaCfwpfQw2t0YswPnP3PML/9SpZecZYOZVnvqVkl1VriMONhV7IXrMq1PuAIw5eurKagFdzEhpw==
+"@clerk/clerk-react@^5.53.3":
+  version "5.53.3"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.53.3.tgz#083fbf7adaebc66c38ee48c70613df6313f9d083"
+  integrity sha512-7bEaJox6TzVhUSX6PjOuKpu6KPFT92bdeFSm8gtcA5ix4ce1WE0pC6K7mWdNZXxpLWmBbbqqsOuQSBFVIcC0hw==
   dependencies:
-    "@clerk/types" "^4.90.0"
+    "@clerk/shared" "^3.28.3"
+    "@clerk/types" "^4.95.1"
+    tslib "2.8.1"
+
+"@clerk/localizations@^3.26.3":
+  version "3.26.3"
+  resolved "https://registry.yarnpkg.com/@clerk/localizations/-/localizations-3.26.3.tgz#eedc76ea9c430c1b56234289215fced8bae0f179"
+  integrity sha512-72TOjkt2q5V/z+HGq3Pz/ejXy4EO/iAiUTC2OuvJ8ny8RN7HMyOsa5ENgDok8DLjsUoDTnqHYCGh1XruRHWDqA==
+  dependencies:
+    "@clerk/types" "^4.95.1"
 
 "@clerk/nextjs@^6.33.1":
   version "6.33.1"
@@ -883,10 +892,29 @@
     std-env "^3.9.0"
     swr "2.3.4"
 
+"@clerk/shared@^3.28.3":
+  version "3.28.3"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.28.3.tgz#4767e0727726412e1ef5bfc660befd50cef112b9"
+  integrity sha512-IjuEHf2faKohv7Q4Q/C1P7bvXonbatuGwTu2ZUQ5wnULafHRpT6GfR82bhk/OaxTZ0CI+sPzHr7yoC3Kp8Ho1g==
+  dependencies:
+    "@clerk/types" "^4.95.1"
+    dequal "2.0.3"
+    glob-to-regexp "0.4.1"
+    js-cookie "3.0.5"
+    std-env "^3.9.0"
+    swr "2.3.4"
+
 "@clerk/types@^4.90.0":
   version "4.90.0"
   resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.90.0.tgz#23bc29c111a064c914d481af3f17bc663c6d0887"
   integrity sha512-AnXeCkyFdM+3icdeKElajVKV73IvlQ6eeWTaLG700CzL+Zw9iD2YV4t8qAhNhwo0FFtkcI9EKDblw6G9Rn1Onw==
+  dependencies:
+    csstype "3.1.3"
+
+"@clerk/types@^4.95.1":
+  version "4.95.1"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.95.1.tgz#1f6a67663d40e0330e9eb0cb8570a139e06edf55"
+  integrity sha512-YZ7fiWS1IL7zl6o3azw+9HRO1keeEhaTieqSpwlesHASp3dE8EIB6WwSkGlcGOWRZyrOgisoBRDERP6tdzprZA==
   dependencies:
     csstype "3.1.3"
 
