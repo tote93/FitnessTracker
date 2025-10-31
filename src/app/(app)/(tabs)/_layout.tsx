@@ -12,7 +12,7 @@ const Layout = () => {
         }} />
         {/* Exercise Tab */}
         <Tabs.Screen name="exercises" options={{
-            headerShown: false, title: "Exercise",
+            headerShown: false, title: "Exercises",
             tabBarIcon: ({ color, size }) => <AntDesign name='book' color={color} size={size} />
         }} />
         {/* Workout Tab */}
