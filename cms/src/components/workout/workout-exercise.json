@@ -10,14 +10,10 @@
       "relation": "oneToOne",
       "target": "api::exercise.exercise"
     },
-    "weight": {
-      "type": "integer"
-    },
     "sets": {
-      "type": "integer"
-    },
-    "reps": {
-      "type": "integer"
+      "type": "component",
+      "component": "workout.workout-set",
+      "repeatable": true
     }
   },
   "config": {}

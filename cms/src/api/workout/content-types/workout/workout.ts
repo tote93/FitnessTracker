@@ -11,6 +11,8 @@ export interface Workout {
     date: Date;
     duration: number;
     calories_estimate?: number;
+    title?: string;
+    rp?: number;
     exercises: WorkoutExercise[];
   };
 }
@@ -20,6 +22,8 @@ export interface Workout_Plain {
   date: Date;
   duration: number;
   calories_estimate?: number;
+  title?: string;
+  rp?: number;
   exercises: WorkoutExercise_Plain[];
 }
 
@@ -29,6 +33,8 @@ export interface Workout_NoRelations {
   date: Date;
   duration: number;
   calories_estimate?: number;
+  title?: string;
+  rp?: number;
   exercises: WorkoutExercise_NoRelations[];
 }
 
@@ -38,5 +44,7 @@ export interface Workout_AdminPanelLifeCycle {
   date: Date;
   duration: number;
   calories_estimate?: number;
+  title?: string;
+  rp?: number;
   exercises: WorkoutExercise_Plain[];
 }

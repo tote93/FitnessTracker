@@ -8,6 +8,14 @@ export enum Difficulty {
   Beginner = 'Beginner',
   Intermediate = 'Intermediate',
   Advanced = 'Advanced',}
+export enum MuscleGroup {
+  Chest = 'Chest',
+  Back = 'Back',
+  Shoulders = 'Shoulders',
+  Legs = 'Legs',
+  Arms = 'Arms',
+  Core = 'Core',
+  FullBody = 'Full Body',}
 
 export interface Exercise {
   id: number;
@@ -17,6 +25,7 @@ export interface Exercise {
     difficulty?: Difficulty;
     image?: { data: Media };
     videoUrl?: string;
+    muscleGroup?: MuscleGroup;
     isActive?: boolean;
   };
 }
@@ -27,6 +36,7 @@ export interface Exercise_Plain {
   difficulty?: Difficulty;
   image?: Media_Plain;
   videoUrl?: string;
+  muscleGroup?: MuscleGroup;
   isActive?: boolean;
 }
 
@@ -37,6 +47,7 @@ export interface Exercise_NoRelations {
   difficulty?: Difficulty;
   image?: number;
   videoUrl?: string;
+  muscleGroup?: MuscleGroup;
   isActive?: boolean;
 }
 
@@ -47,5 +58,6 @@ export interface Exercise_AdminPanelLifeCycle {
   difficulty?: Difficulty;
   image?: AdminPanelRelationPropertyModification<Media_Plain>;
   videoUrl?: string;
+  muscleGroup?: MuscleGroup;
   isActive?: boolean;
 }

@@ -45,12 +45,18 @@ export interface Exercise {
     isActive?: boolean;
 }
 
+export interface WorkoutExerciseSet {
+    id?: number;
+    weight?: number;
+    weightUnit?: string;
+    reps?: number;
+    rp?: number;
+}
+
 export interface WorkoutExerciseEntry {
     id?: number;
     exercise?: Exercise;
-    reps?: number;
-    sets?: number;
-    weight?: number;
+    sets?: WorkoutExerciseSet[];
     raw?: any;
 }
 
@@ -63,5 +69,7 @@ export interface Workout {
     date: Date;
     duration: number;
     calories_estimate?: number;
+    title?: string;
+    rp?: number;
     exercises?: WorkoutExerciseEntry[];
 }

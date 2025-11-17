@@ -32,6 +32,11 @@
     "videoUrl": {
       "type": "string"
     },
+    "muscleGroup": {
+      "type": "enumeration",
+      "enum": ["Chest", "Back", "Shoulders", "Legs", "Arms", "Core", "Full Body"],
+      "default": "Full Body"
+    },
     "isActive": {
       "type": "boolean",
       "default": true

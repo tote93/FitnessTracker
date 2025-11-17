@@ -28,6 +28,7 @@ export const getDifficultyText = (difficulty: string) => {
 };
 
 export const getMediaUrl = (item: Exercise) => {
-  const imageUrl = item.image.url ? `${API_URL}${item.image.url}` : null;
-  return imageUrl;
+  const relativeUrl = item.image?.url;
+  if (!relativeUrl) return null;
+  return `${API_URL}${relativeUrl}`;
 };

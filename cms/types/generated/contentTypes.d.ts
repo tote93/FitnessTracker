@@ -457,6 +457,10 @@ export interface ApiExerciseExercise extends Struct.CollectionTypeSchema {
       'api::exercise.exercise'
     > &
       Schema.Attribute.Private;
+    muscleGroup: Schema.Attribute.Enumeration<
+      ['Chest', 'Back', 'Shoulders', 'Legs', 'Arms', 'Core', 'Full Body']
+    > &
+      Schema.Attribute.DefaultTo<'Full Body'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -491,6 +495,8 @@ export interface ApiWorkoutWorkout extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    rp: Schema.Attribute.Float;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

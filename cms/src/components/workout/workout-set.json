@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_workout_workout_sets",
+  "info": {
+    "displayName": "Workout Set"
+  },
+  "options": {},
+  "attributes": {
+    "weight": {
+      "type": "float"
+    },
+    "weightUnit": {
+      "type": "enumeration",
+      "enum": ["kg", "lb"],
+      "default": "kg"
+    },
+    "reps": {
+      "type": "integer"
+    },
+    "rp": {
+      "type": "integer",
+      "description": "Rating of perceived effort / RP value"
+    }
+  },
+  "config": {}
+}

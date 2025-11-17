@@ -1,4 +1,6 @@
-export const formatWorkoutDate = (date?: Date) => date?.toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short" }) ?? "Unknown date";
+export const formatWorkoutDate = (date?: Date) =>
+  date?.toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" }) ??
+  "Fecha desconocida";
 
 export const formatWorkoutDuration = (seconds: number) => {
   if (!seconds) return "0 min";

@@ -11,12 +11,14 @@ interface ExerciseCardProps {
 }
 
 const ExerciseCard = ({ item, onPress, showChevron = false }: ExerciseCardProps) => {
+    const imageUrl = item.image && item.image.url ? getMediaUrl(item) : null;
+
     return (
         <TouchableOpacity onPress={onPress} className="bg-white rounded-2xl p-4 mb-4 shadow">
             <View className="flex-row p-1">
                 <View className="w-20 h-20 bg-white rounded-xl mr-4 overflow-hidden">
-                    {item.image.url ? (
-                        <Image source={{ uri: getMediaUrl(item) }} className="w-full h-full" resizeMode="contain" />
+                    {imageUrl ? (
+                        <Image source={{ uri: imageUrl }} className="w-full h-full" resizeMode="contain" />
                     ) : (
                         <View className="flex-1 justify-center items-center bg-gray-200">
                             <AntDesign name="picture" size={24} color="#9CA3AF" />

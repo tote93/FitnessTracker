@@ -26,6 +26,14 @@
     "calories_estimate": {
       "type": "float"
     },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "rp": {
+      "type": "float",
+      "description": "Rating point or RP value for the workout"
+    },
     "exercises": {
       "type": "component",
       "component": "workout.workout-exercise",

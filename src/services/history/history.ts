@@ -6,6 +6,7 @@ import {
   MediaFormat,
   Workout,
   WorkoutExerciseEntry,
+  WorkoutExerciseSet,
 } from "../types";
 
 export type GetWorkoutHistoryOptions = {
@@ -16,16 +17,26 @@ export type GetWorkoutHistoryOptions = {
   sort?: string[];
 };
 
-const DEFAULT_FIELDS = ["userId", "date", "duration", "calories_estimate", "createdAt", "updatedAt", "publishedAt"];
+const DEFAULT_FIELDS = [
+  "title",
+  "userId",
+  "date",
+  "duration",
+  "calories_estimate",
+  "rp",
+  "createdAt",
+  "updatedAt",
+  "publishedAt",
+];
 const DEFAULT_POPULATE = {
   exercises: {
     populate: {
+      // Only need the name of the exercise in the history and the data of each set
       exercise: {
-        populate: {
-          image: {
-            fields: ["url", "formats", "name", "alternativeText", "caption", "provider", "createdAt", "updatedAt"],
-          },
-        },
+        fields: ["name"],
+      },
+      sets: {
+        fields: ["weight", "weightUnit", "reps", "rp"],
       },
     },
   },
@@ -104,25 +115,48 @@ const normalizeExercise = (entry: any): Exercise => {
   };
 };
 
+const normalizeWorkoutExerciseSet = (set: any): WorkoutExerciseSet => {
+  if (!set) return {};
+  return {
+    id: set?.id,
+    weight: toNumber(set?.weight),
+    weightUnit: set?.weightUnit ?? "kg",
+    reps: toNumber(set?.reps),
+    rp: toNumber(set?.rp),
+  };
+};
+
 const normalizeWorkoutExerciseEntry = (component: any): WorkoutExerciseEntry => {
   if (!component) return {};
   const exerciseRelation = component?.exercise;
   const exerciseData = exerciseRelation?.data ?? exerciseRelation;
   const normalizedExercise = exerciseData ? normalizeExercise(exerciseData) : undefined;
 
+  const setsInput = component?.sets ?? [];
+  const setsArray = Array.isArray(setsInput)
+    ? setsInput
+    : Array.isArray(setsInput?.data)
+      ? setsInput.data
+      : [];
+  const normalizedSets = setsArray.map(normalizeWorkoutExerciseSet);
+
   return {
     id: component?.id,
     exercise: normalizedExercise,
-    weight: toNumber(component?.weight),
-    reps: toNumber(component?.reps),
-    sets: toNumber(component?.sets),
+    sets: normalizedSets.length ? normalizedSets : undefined,
     raw: component,
   };
 };
 
 const normalizeWorkoutExercises = (payload: any): WorkoutExerciseEntry[] => {
   if (!payload) return [];
-  const items = Array.isArray(payload) ? payload : payload?.data ?? payload?.results ?? [];
+  const items = Array.isArray(payload)
+    ? payload
+    : Array.isArray(payload?.data)
+      ? payload.data
+      : Array.isArray(payload?.results)
+        ? payload.results
+        : [];
   return items.map(normalizeWorkoutExerciseEntry);
 };
 
@@ -137,6 +171,8 @@ const normalizeWorkout = (entry: any): Workout => {
     date: parseDate(attributes?.date ?? entry?.date) ?? new Date(),
     duration: attributes?.duration ?? entry?.duration ?? 0,
     calories_estimate: attributes?.calories_estimate ?? entry?.calories_estimate,
+    title: attributes?.title ?? entry?.title,
+    rp: attributes?.rp ?? entry?.rp,
     exercises: normalizeWorkoutExercises(attributes?.exercises ?? entry?.exercises),
   };
 };
