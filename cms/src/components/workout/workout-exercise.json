@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_workout_workout_exercises",
+  "info": {
+    "displayName": "Workout Exercise"
+  },
+  "options": {},
+  "attributes": {
+    "exercise": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exercise.exercise"
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "sets": {
+      "type": "integer"
+    },
+    "reps": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

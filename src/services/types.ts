@@ -45,11 +45,23 @@ export interface Exercise {
     isActive?: boolean;
 }
 
+export interface WorkoutExerciseEntry {
+    id?: number;
+    exercise?: Exercise;
+    reps?: number;
+    sets?: number;
+    weight?: number;
+    raw?: any;
+}
+
 export interface Workout {
     id: number;
-    createdAt: Date; updatedAt: Date; publishedAt?: Date; userId: string;
+    createdAt: Date;
+    updatedAt: Date;
+    publishedAt?: Date;
+    userId: string;
     date: Date;
     duration: number;
-    exercises?: any;
-
+    calories_estimate?: number;
+    exercises?: WorkoutExerciseEntry[];
 }

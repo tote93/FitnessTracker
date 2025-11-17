@@ -477,12 +477,13 @@ export interface ApiWorkoutWorkout extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    calories_estimate: Schema.Attribute.Float;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime & Schema.Attribute.Required;
     duration: Schema.Attribute.Integer & Schema.Attribute.Required;
-    exercises: Schema.Attribute.JSON;
+    exercises: Schema.Attribute.Component<'workout.workout-exercise', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

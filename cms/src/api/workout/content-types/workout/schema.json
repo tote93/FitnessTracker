@@ -13,8 +13,7 @@
   "attributes": {
     "userId": {
       "type": "string",
-      "required": true,
-      "description": "Clerk user ID of the user who performed this workout"
+      "required": true
     },
     "date": {
       "type": "datetime",
@@ -22,12 +21,15 @@
     },
     "duration": {
       "type": "integer",
-      "required": true,
-      "description": "Workout duration in seconds"
+      "required": true
+    },
+    "calories_estimate": {
+      "type": "float"
     },
     "exercises": {
-      "type": "json",
-      "description": "Array of exercises with nested sets (reps, weight, units)"
+      "type": "component",
+      "component": "workout.workout-exercise",
+      "repeatable": true
     }
   }
 }

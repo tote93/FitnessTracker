@@ -202,7 +202,7 @@ const ExerciseDetail = () => {
                                     {aiLoading ? (
                                         <View className="flex-row items-center">
                                             <ActivityIndicator size="small" color="#fff" />
-                                            <Text className="text-white font-semibold text-lg">Loading AI Coach...</Text>
+                                            <Text className="text-white font-semibold text-lg ml-2">Loading AI Coach...</Text>
                                         </View>
                                     ) : (
                                         <Text className="text-white font-bold text-lg">
